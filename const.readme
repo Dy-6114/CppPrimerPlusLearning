@@ -1,0 +1,22 @@
+指针和const
+1.常规变量的地址赋给指向const的指针
+int age = 39;
+int sage = 80;
+const int* p = &age;
+p = &sage;
+*p的值不允许被修改，但是可以修改age的值；还可以将一个新地址赋给p。
+2.const变量的地址赋给指向const的指针
+const float g_earth = 9.80;
+const float* pe = &g_earth;
+这是可行的。且既不能使用g_earth修改值，也不可能使用*pe来修改值。
+3.const变量的地址赋给常规指针：这是不可行的
+4.一级间接关系：将非const指针赋给const指针是可以的
+int age = 39;
+int* p = &age;
+const int* pt = p;
+注意：如果数据类型本身并不是指针，则可以将cosnt数据或非const数据的地址赋给指向const的指针，但只能将非const数据的地址赋给指向非const的指针。
+5.使用const的第二种方法
+int sloth = 3;
+int* const finger = &sloth; //a const pointer to int;
+*finger =5;
+这意味着finger只能指向sloth，但允许使用finger修改sloth的值。

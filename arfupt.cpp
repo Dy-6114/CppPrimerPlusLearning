@@ -44,6 +44,12 @@ int main()
     cout << "\nusing pointers to an array of pointers:" << endl;
     cout << "address value:" << endl;
     cout << (*pc)[0](av, 3) << ":" << *(*pc)[0](av, 3) << endl;
+
+    //使用typedef进行简化
+    typedef const double * (*p_fun)(const double *,int);
+    p_fun  p1 = f1;
+    p_fun pa[3] = {f1, f2, f3};
+    p_fun (*pd)[3] = &pa;
     return 0;
 }
 const double *f1(const double ar[], int n)

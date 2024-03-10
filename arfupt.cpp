@@ -47,8 +47,8 @@ int main()
 
     //使用typedef进行简化
     typedef const double * (*p_fun)(const double *,int);
-    p_fun  p1 = f1;
-    p_fun pa[3] = {f1, f2, f3};
+    p_fun  p_1 = f1;
+    p_fun p_a[3] = {f1, f2, f3};
     p_fun (*pd)[3] = &pa;
     return 0;
 }
